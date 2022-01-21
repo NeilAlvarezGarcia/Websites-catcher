@@ -1,11 +1,10 @@
 import React, { useEffect, useCallback } from 'react'
-import { useContextApi } from '../customHooks/useContextApi';
 import { showDataFirestore } from '../firebase';
 import ListItem from './ListItem';
 
 const Links = () => {
-    const {data, setData} = useContextApi();
-    
+    const [data, setData] = useState([]);
+
     const getData = useCallback(async () => {
         const dataResult = await  showDataFirestore();
   
@@ -13,7 +12,6 @@ const Links = () => {
     }, [setData]);
     
     useEffect(() => {
-
         getData();
     }, [data, getData]);
     

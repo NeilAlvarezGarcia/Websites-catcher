@@ -9,14 +9,12 @@ const initForm = {
 
 const ContextApi = ({children}) => {
     const [form, setForm] = useState(initForm);
-    const [data, setData] = useState([]);
     const [edit, setEdit] = useState(false);
 
 
     const state = {
         initForm,
         form, setForm, 
-        data, setData, 
         edit, setEdit
     }
 
